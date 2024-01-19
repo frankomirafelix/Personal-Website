@@ -53,7 +53,8 @@
             padding: 20px;
             background-color: #333;
             color: #fff;
-	    text-shadow: 10px 10px 10px #000;
+            text-shadow: 10px 10px 10px #000;
+	    margin-top: 150px;
 
         }
 
@@ -74,12 +75,11 @@
             margin-left: 10px;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-	    
-        .navigation-buttons button:hover {
-    	 background-color: #333; 
-    	 color: #fff; 
 
-	}
+        .navigation-buttons button:hover {
+            background-color: #333;
+            color: #fff;
+        }
 
         .hidden {
             display: none;
@@ -209,6 +209,44 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+        /* Add a media query for smaller screens */
+        @media screen and (max-width: 768px) {
+            .navigation-buttons {
+                position: static;
+                top: auto;
+                right: auto;
+                text-align: center;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust the minmax values as needed */
+                gap: 10px;
+                margin-top: 20px;
+            }
+
+            .navigation-buttons button {
+                margin: 0;
+            }
+        }
+
+        /* Add a general media query for responsiveness */
+        @media screen and (max-width: 1200px) {
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile-image img {
+                max-width: 100%;
+            }
+
+            .blog-content,
+            .about-me-details,
+            .resume-info {
+                max-width: 100%;
+            }
+
+            /* Add more responsive styling as needed */
+        }
     </style>
     <title>Personal Website</title>
 </head>
@@ -324,7 +362,7 @@
                 <div class="resume-image">
                     <img src="resume.jpg" alt="Resume Image">
                     <p>
-                        Click <a href="My Resume.pdf" download class="btn btn-color-download">here</a>  to
+                        Click <a href="My Resume.pdf" download class="btn btn-color-download">here</a> to
                         download the PDF File of My Resume.
                     </p>
                 </div>
@@ -336,27 +374,27 @@
         <p>&copy; 2024 Website Programming. BSIT 222.</p>
     </footer>
 
-<script>
-    // Display terms and conditions alert on page load
-    window.onload = function () {
-        var termsMessage = "Welcome to [Personal Website]!\n\nPrivacy Commitment: Respect my privacy and you will not disclose any personal information provided on this website.\n\nBy continuing, you agree to the term and condition of this website.";
-        if (!confirm(termsMessage)) {
-            // If the user clicks "Cancel", show an alert and redirect them to an error page or external URL
-            alert('You must agree to the terms and conditions to continue.');
-            window.location.href = 'error.html'; // Replace with the correct error page or URL
+    <script>
+        // Display terms and conditions alert on page load
+        window.onload = function () {
+            var termsMessage = "Welcome to [Personal Website]!\n\nPrivacy Commitment: Respect my privacy and you will not disclose any personal information provided on this website.\n\nBy continuing, you agree to the term and condition of this website.";
+            if (!confirm(termsMessage)) {
+                // If the user clicks "Cancel", show an alert and redirect them to an error page or external URL
+                alert('You must agree to the terms and conditions to continue.');
+                window.location.href = 'error.html'; // Replace with the correct error page or URL
+            }
+        };
+
+        function loadContent(section) {
+            // Hide all sections
+            document.querySelectorAll('.section-content').forEach(function (sectionContent) {
+                sectionContent.classList.add('hidden');
+            });
+
+            // Show the selected section
+            document.getElementById(section).classList.remove('hidden');
         }
-    };
-
-    function loadContent(section) {
-        // Hide all sections
-        document.querySelectorAll('.section-content').forEach(function (sectionContent) {
-            sectionContent.classList.add('hidden');
-        });
-
-        // Show the selected section
-        document.getElementById(section).classList.remove('hidden');
-    }
-</script>
+    </script>
 
 </body>
 
