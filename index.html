@@ -54,7 +54,7 @@
             background-color: #333;
             color: #fff;
             text-shadow: 10px 10px 10px #000;
-	    margin-top: 100px;
+	    margin-top: 110px;
 
         }
 
@@ -100,7 +100,9 @@
 
         .about-me-summary,
         .about-me-skills,
-        .about-me-hobbies {
+        .about-me-hobbies,
+        .blog-section,
+        .education-section {
             flex: 1;
             margin: 10px;
             padding: 20px;
@@ -112,17 +114,23 @@
 
         .about-me-summary h2,
         .about-me-skills h2,
-        .about-me-hobbies h2 {
+        .about-me-hobbies h2,
+        .blog-section h2,
+        .education-section h2 {
             color: #333;
             font-family: 'Arial', sans-serif;
             margin-bottom: 10px;
         }
 
-        .about-me-summary p {
+        .about-me-summary p,
+        .blog-content p,
+        .education-content p {
             margin: 0;
         }
 
-        .about-me-skills ul {
+        .about-me-skills ul,
+        .blog-content ul,
+        .education-content ul {
             list-style-type: disc;
             padding-left: 20px;
             margin: 0;
@@ -186,6 +194,36 @@
             margin: 0;
         }
 
+        .education-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .education-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .education-item {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .education-item h2 {
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .education-item p {
+            margin: 0;
+        }
+
         .resume-content {
             text-align: center;
         }
@@ -210,7 +248,6 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Add a media query for smaller screens */
         @media screen and (max-width: 768px) {
             .navigation-buttons {
                 position: static;
@@ -226,9 +263,8 @@
             .navigation-buttons button {
                 margin: 0;
             }
-        }
+        
 
-        /* Add a general media query for responsiveness */
         @media screen and (max-width: 1200px) {
             .profile-section {
                 flex-direction: column;
@@ -244,18 +280,17 @@
             .resume-info {
                 max-width: 100%;
             }
+	
 
-            /* Add more responsive styling as needed */
-        }
     </style>
-    <title>Personal Website</title>
+    <title>gyatt</title>
 </head>
 
 <body>
 
     <section id="home" class="section-content">
         <header>
-            <h1>Personal Website</h1>
+            <h1>Personal </h1>
             <p>Explore More!</p>
             <div class="navigation-buttons">
                 <button onclick="loadContent('home')">Home</button>
@@ -323,20 +358,44 @@
                 </div>
             </div>
 
-            <!-- Blog/Articles Section -->
             <div class="blog-section">
-                <h2>Blog/Articles</h2>
-                <p>blog shits</p>
+                <h2>BLOG</h2>
+                <p>Share your thoughts, insights, or expertise on specific topics. Categorize and tag your articles for
+                    easy navigation.</p>
                 <div class="blog-content">
-                    <div class="blog-post">
-                        <h2>Article 1</h2>
-                        <p>attentive driving dapat tapos side mirror at rear mirror lang goods na</p>
+                    <div class="blog-post">                      
+		      <h2>TIPS AND ADVICE</h2>
+                        <p>Since then, I have grown to adore driving. I grew up watching my father drive, and in high school, <br> he offered me driving lessons and advice that I still follow now. <br> I'm going to give you some advice about driving.</p><br>
+                    <ul>
+                        <li>Be attentive.</li>
+                        <li>Be patient, less road rage.</li>
+                        <li>Don't be kamote driver! ^_^</li>
+                    </ul>
                     </div>
                     <div class="blog-post">
-                        <h2>Article 2</h2>
-                        <p>maging defensive driver ka goods na yun</p>
+                        <h2>ALL OF ME</h2>
+                        <p>Hello, my name is Franko Mirafelix, and although I was born in Malolos, Bulacan, I have lived in Caloocan my entire life. I am my family's eldest son. Currently enrolled in National University - Fairview, I am a second-year student. <br>
+				I used to approach everything in my life with a "it is what it is" and "let it happen" mentality. Every hardship has an end, and we have developed the greatest way to overcome it. It brings me joy to witness everyone overcoming their life's challenges. <br>
+				Thus, don't worry if you ever feel like a failure in life—you just need to push through it. Simply accept that "it is what it is" and get back up to try again if you were unsuccessful. Life is like that.</p>
                     </div>
-                    <!-- Add more blog posts as needed -->
+                </div>
+            </div>
+
+            <div class="education-section">
+                <h2>Education Background</h2>
+                <div class="education-content">
+                    <div class="education-item">
+                        <h2>National University</h2>
+                        <p>BS in Information Technology</p>
+                    </div>
+                    <div class="education-item">
+                        <h2>Deparo High School / St. Joseph College of Novaliches</h2>
+                        <p>High School Diploma</p>
+                    </div>
+                    <div class="education-item">
+                        <h2>Deparo Elementary School</h2>
+                        <p>Elementary Education</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -362,7 +421,7 @@
                 <div class="resume-image">
                     <img src="resume.jpg" alt="Resume Image">
                     <p>
-                        Click <a href="My Resume.pdf" download class="btn btn-color-download">here</a> to
+                        Click <a href="https://publuu.com/flip-book/366965/836736" target="_blank">here</a> to
                         download the PDF File of My Resume.
                     </p>
                 </div>
@@ -375,7 +434,6 @@
     </footer>
 
     <script>
-        // Display terms and conditions alert on page load
         window.onload = function () {
             var termsMessage = "Welcome to [Personal Website]!\n\nPrivacy Commitment: Respect my privacy and you will not disclose any personal information provided on this website.\n\nBy continuing, you agree to the term and condition of this website.";
             if (!confirm(termsMessage)) {
@@ -384,7 +442,6 @@
                 window.location.href = 'error.html'; // Replace with the correct error page or URL
             }
         };
-
         function loadContent(section) {
             // Hide all sections
             document.querySelectorAll('.section-content').forEach(function (sectionContent) {
