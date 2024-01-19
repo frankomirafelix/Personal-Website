@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: '', fantasy;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1, header p {
+            text-shadow: 10px 10px 10px #000; /* Adding black stroke */
+        }
+
+        .profile-section {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .profile-image img {
+            max-width: 80%;
+            border-radius: 50%;
+        }
+
+        .profile-info {
+            max-width: 900px;
+        }
+
+        .skills-section {
+            background-color: #f4f4f4;
+            padding: 40px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+	    text-shadow: 10px 10px 10px #000;
+
+        }
+
+        .navigation-buttons {
+            position: absolute;
+            top: 60px;
+            right: 100px;
+            display: flex;
+        }
+
+        .navigation-buttons button {
+            background-color: #ffffff;
+            color: #000;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hidden {
+            display: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .about-me-content {
+            text-align: center;
+        }
+
+        .about-me-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .about-me-summary,
+        .about-me-skills,
+        .about-me-hobbies {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .about-me-summary h2,
+        .about-me-skills h2,
+        .about-me-hobbies h2 {
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .about-me-summary p {
+            margin: 0;
+        }
+
+        .about-me-skills ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .hobbies-container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .hobby-item {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .hobby-item img {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px
+        }
+
+        .hobby-item p {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .blog-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .blog-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .blog-post {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .blog-post h2 {
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .blog-post p {
+            margin: 0;
+        }
+
+        .resume-content {
+            text-align: center;
+        }
+
+        .resume-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .resume-info {
+            max-width: 500px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .resume-image img {
+            max-width: 100%;
+            margin-bottom: 20 px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <title>Franko Mirafelix - Profile</title>
+</head>
+
+<body>
+
+    <section id="home" class="section-content">
+        <header>
+            <h1>Personal Website</h1>
+            <p>Explore More!</p>
+            <div class="navigation-buttons">
+                <button onclick="loadContent('home')">Home</button>
+                <button onclick="loadContent('about-me')">About Me</button>
+                <button onclick="loadContent('resume')">Resume</button>
+            </div>
+        </header>
+
+        <div class="profile-section">
+            <div class="profile-image">
+                <img src="franko.jpg" alt="Franko Mirafelix">
+            </div>
+            <div class="profile-info">
+                <p>
+                    Hello there! Welcome to my Personal Website! <br>
+                    <br>
+                    I am Franko Mirafelix
+                </p>
+                <p>
+                    Connect with me on
+                    <a href="https://www.instagram.com/kiwidnyl.xo2/" target="_blank">Instagram</a>
+                    and
+                    <a href="https://www.facebook.com/ukinarp/" target="_blank">Facebook</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-me" class="section-content hidden">
+        <div class="about-me-content">
+            <header>
+                <h1>About Me</h1>
+                <p>All of Me</p>
+                <div class="navigation-buttons">
+                    <button onclick="loadContent('home')">Home</button>
+                    <button onclick="loadContent('about-me')">About Me</button>
+                    <button onclick="loadContent('resume')">Resume</button>
+                </div>
+            </header>
+
+            <div class="about-me-details">
+                <div class="about-me-summary">
+                    <h2>INTRODUCTION</h2>
+                    <p>Greetings! I am a 19-year-old student in my second year at National University. <br> Welcome
+                        to my world!</p>
+                </div>
+
+                <div class="about-me-skills">
+                    <h2>SKILLS</h2>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Leadership</li>
+                        <li>Analytical and Quantitative</li>
+                    </ul>
+                </div>
+
+                <div class="about-me-hobbies">
+                    <h2>HOBBY</h2>
+                    <div class="hobbies-container">
+                        <div class="hobby-item">
+                            <img src="drive.jpg" alt="driverism">
+                            <p>Driving</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog/Articles Section -->
+            <div class="blog-section">
+                <h2>Blog/Articles</h2>
+                <p>blog shits</p>
+                <div class="blog-content">
+                    <div class="blog-post">
+                        <h2>Article 1</h2>
+                        <p>attentive driving dapat tapos side mirror at rear mirror lang goods na</p>
+                    </div>
+                    <div class="blog-post">
+                        <h2>Article 2</h2>
+                        <p>maging defensive driver ka goods na yun</p>
+                    </div>
+                    <!-- Add more blog posts as needed -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="section-content hidden">
+        <div class="resume-content">
+            <header>
+                <h1>Personal Background</h1>
+                <p>Explore</p>
+                <div class="navigation-buttons">
+                    <button onclick="loadContent('home')">Home</button>
+                    <button onclick="loadContent('about-me')">About Me</button>
+                    <button onclick="loadContent('resume')">Resume</button>
+                </div>
+            </header>
+
+            <div class="resume-content">
+                <h2>My Resume</h2>
+                <div class="resume-info">
+                    <!-- Add your resume details here -->
+                </div>
+                <div class="resume-image">
+                    <img src="resume.jpg" alt="Resume Image">
+                    <p>
+                        Click <a href="https://publuu.com/flip-book/366965/836736" target="_blank">here</a> to
+                        download the PDF File of My Resume.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Website Programming. BSIT 222.</p>
+    </footer>
+
+<script>
+    // Display terms and conditions alert on page load
+    window.onload = function () {
+        var termsMessage = "Welcome to [Personal Website]!\n\nPrivacy Commitment: Respect my privacy and you will not disclose any personal information provided on this website.\n\nBy continuing, you agree to the term and condition of this website.";
+        if (!confirm(termsMessage)) {
+            // If the user clicks "Cancel", show an alert and redirect them to an error page or external URL
+            alert('You must agree to the terms and conditions to continue.');
+            window.location.href = 'error.html'; // Replace with the correct error page or URL
+        }
+    };
+
+    function loadContent(section) {
+        // Hide all sections
+        document.querySelectorAll('.section-content').forEach(function (sectionContent) {
+            sectionContent.classList.add('hidden');
+        });
+
+        // Show the selected section
+        document.getElementById(section).classList.remove('hidden');
+    }
+</script>
+
+</body>
+
+</html>
